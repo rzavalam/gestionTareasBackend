@@ -21,7 +21,6 @@ public class TareaController {
 	@Autowired
 	private TareaService tareaService;
 	
-	
 	//metodos de listar
 	@GetMapping("/listar")
 	public List<Tarea> listar() {

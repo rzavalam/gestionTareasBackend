@@ -23,10 +23,10 @@ public class Tarea {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idTarea;
 
-	@Column(name = "nombre", nullable = false, length = 50)
+	@Column(name = "nombre", nullable = false, length = 100)
 	private String nombre;
 
-	@Column(name = "responsable", nullable = false, length = 70)
+	@Column(name = "responsable", nullable = false, length = 100)
 	private String responsable;
 
 	@Column(name = "descTarea", nullable = false, length = 70)
@@ -45,5 +45,13 @@ public class Tarea {
 	@Column(name = "fechaFinal", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date fechaFinal;
+	
+	@Column(name = "fechaRegistro", nullable = false)
+	@Temporal(TemporalType.DATE)
+	private Date fechaRegistro;
+	
+	@Column(name = "fechaModifica", nullable = false)
+	@Temporal(TemporalType.DATE)
+	private Date fechaModifica;
 
 }
