@@ -3,6 +3,7 @@ package com.movil.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,25 +16,26 @@ import com.movil.entity.Tarea;
 import com.movil.service.TareaService;
 
 @RestController
-@RequestMapping("/url/tareas")
+@RequestMapping("/angular/tareas")
+@CrossOrigin ("*")
 public class TareaController {
 
 	@Autowired
 	private TareaService tareaService;
 	
 	//metodos de listar
-	@GetMapping("/listar")
-	public List<Tarea> listar() {
+	@GetMapping("/listarTarea")
+	public List<Tarea> listarTareas() {
 		return tareaService.findAll();
 	}
 	
-	@PostMapping("/registrar")
-	public Tarea registrar(@RequestBody Tarea tarea) {
+	@PostMapping("/registrarTarea")
+	public Tarea registrarTarea(@RequestBody Tarea tarea) {
 		return tareaService.save(tarea);
-	}
+	}	
 	
-	@DeleteMapping("/eliminar/{id}")
-	public void eliminar(@PathVariable("id") int idTarea) {
+	@DeleteMapping("/eliminarTarea/{id}")
+	public void eliminarTarea(@PathVariable("id") int idTarea) {
 		tareaService.delete(idTarea);
 	}
 	
