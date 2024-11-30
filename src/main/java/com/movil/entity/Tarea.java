@@ -2,6 +2,8 @@ package com.movil.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,18 +42,22 @@ public class Tarea {
 
 	@Column(name = "fechaInicio", nullable = false)
 	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "America/Lima")
 	private Date fechaInicio;
 
 	@Column(name = "fechaFinal", nullable = false)
 	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "America/Lima")
 	private Date fechaFinal;
 	
 	@Column(name = "fechaRegistro", nullable = false)
 	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss", timezone = "America/Lima")
 	private Date fechaRegistro;
 	
 	@Column(name = "fechaModifica", nullable = false)
 	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss", timezone = "America/Lima")
 	private Date fechaModifica;
 
 	public int getIdTarea() {

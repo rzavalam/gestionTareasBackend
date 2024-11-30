@@ -1,5 +1,6 @@
 package com.movil.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,9 @@ public class TareaController {
 	
 	@PostMapping("/registrarTarea")
 	public Tarea registrarTarea(@RequestBody Tarea tarea) {
+		tarea.setIdTarea(0);
+		tarea.setFechaRegistro(new Date());
+		tarea.setFechaModifica(new Date());
 		return tareaService.save(tarea);
 	}	
 	
