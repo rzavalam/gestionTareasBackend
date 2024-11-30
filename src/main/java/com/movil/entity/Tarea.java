@@ -10,11 +10,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import lombok.Getter;
-import lombok.Setter;
+//import lombok.Getter;
+//import lombok.Setter;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @Entity
 @Table(name = "tarea")
 public class Tarea {
@@ -53,5 +53,87 @@ public class Tarea {
 	@Column(name = "fechaModifica", nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date fechaModifica;
+
+	public int getIdTarea() {
+		return idTarea;
+	}
+
+	public void setIdTarea(int idTarea) {
+		this.idTarea = idTarea;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getResponsable() {
+		return responsable;
+	}
+
+	public void setResponsable(String responsable) {
+		this.responsable = responsable;
+	}
+
+	public String getDescTarea() {
+		return descTarea;
+	}
+
+	public void setDescTarea(String descTarea) {
+		this.descTarea = descTarea;
+	}
+
+	public String getPrioridad() {
+		return prioridad;
+	}
+
+	public void setPrioridad(String prioridad) {
+		this.prioridad = prioridad;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public Date getFechaInicio() {
+		return fechaInicio;
+	}
+
+	public void setFechaInicio(Date fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	public Date getFechaFinal() {
+		return fechaFinal;
+	}
+
+	public void setFechaFinal(Date fechaFinal) {
+		this.fechaFinal = fechaFinal;
+	}
+
+	public Date getFechaRegistro() {
+		return fechaRegistro;
+	}
+
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+
+	public Date getFechaModifica() {
+		return fechaModifica;
+	}
+
+	public void setFechaModifica(Date fechaModifica) {
+		this.fechaModifica = fechaModifica;
+	}
+	
+	
 
 }
